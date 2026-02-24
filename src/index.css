@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    background-color: #8ab6e2; /* Using standard CSS instead of @apply */
+    @apply text-gray-800;
+  }
+}
+
+/* Custom Scrollbar styled with the new theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-primary-light; 
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary/70 rounded-full border-2 border-primary-light; 
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary; 
+}
+
+/* Optional: Add a smooth fade-in animation for page loads */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
